@@ -202,12 +202,12 @@ def run(
         LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
 
     # Print results
-    class_name_count = 'fruit'
-            l = s[1:s.find(class_name_count)].split()[-1]
-            if class_name_count in s:
-                print(l,class_name_count)
-                cv2.rectangle(im0, (0,0), (1100, 250), -1)
-                cv2.putText(im0,1+class_name_count,(0,200), cv2.FONT_HERSHEY_SIMPLEX, 8,(255,255,255),24,cv2.LINE_AA)
+    # class_name_count = 'fruit'
+    #         l = s[1:s.find(class_name_count)].split()[-1]
+    #         if class_name_count in s:
+    #             print(l,class_name_count)
+    #             cv2.rectangle(im0, (0,0), (1100, 250), -1)
+    #             cv2.putText(im0,1+class_name_count,(0,200), cv2.FONT_HERSHEY_SIMPLEX, 8,(255,255,255),24,cv2.LINE_AA)
 
     t = tuple(x.t / seen * 1E3 for x in dt)  # speeds per image
     LOGGER.info(f'Speed: %.1fms pre-process, %.1fms inference, %.1fms NMS per image at shape {(1, 3, *imgsz)}' % t)
